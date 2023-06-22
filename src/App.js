@@ -5,7 +5,6 @@ import Hermes from "./pages/Hermes";
 import Login from "./pages/LogIn";
 import Register from "./pages/Register";
 import AboutUs from "./pages/AboutUs";
-import PageNotFound from "./PageNotFound";
 import Nav from "./components/Nav";
 export default function App() {
   return (
@@ -19,7 +18,6 @@ export default function App() {
             <Route exact path="/Login" Component={Login} />
             <Route exact path="/Register" Component={Register} />
             <Route exact path="/AboutUs" Component={AboutUs} />
-            <Route Component={PageNotFound} />
           </Routes>
         </div>
       </BrowserRouter>
