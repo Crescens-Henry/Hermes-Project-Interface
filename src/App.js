@@ -10,14 +10,14 @@ export default function App() {
   return (
     <>
       <BrowserRouter>
-        <div className="App">
+        <div>
           <Nav />
           <Routes>
-            <Route exact path="/" Component={Home} />
-            <Route exact path="/Hermes" Component={Hermes} />
-            <Route exact path="/Login" Component={Login} />
-            <Route exact path="/Register" Component={Register} />
-            <Route exact path="/AboutUs" Component={AboutUs} />
+            <Route path="" element={<Home />} />
+            <Route path="/Hermes" element={<Hermes />} />
+            <Route path="/Login" element={<Login />} />
+            <Route path="/Register" element={<Register />} />
+            <Route path="/AboutUs" element={<AboutUs />} />
           </Routes>
         </div>
       </BrowserRouter>

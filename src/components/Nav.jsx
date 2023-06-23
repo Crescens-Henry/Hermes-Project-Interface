@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function Nav() {
   return (
-    <>
+    <div>
       <nav>
         <ul>
           <li>
@@ -20,6 +20,6 @@ export default function Nav() {
           </li>
         </ul>
       </nav>
-    </>
+    </div>
   );
 }
