@@ -1,12 +1,25 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import Navbar from "./../components/Nav";
+import { Nav, Hero, AboutUs } from "./../components/ImportComponents";
+import styles from "./../Styles";
 
 export default function Layout() {
   return (
-    <>
-      <Navbar />
-      <div>Layout</div>
-    </>
+    <div className="bg-black w-full overflow-hidden">
+      <div className={`${styles.paddingX} ${styles.flexCenter}`}>
+        <div className={`${styles.boxWidth}`}>
+          <Nav />
+        </div>
+      </div>
+      <div className={`bg-black ${styles.flexStart}`}>
+        <div className={`${styles.boxWidth}`}>
+          <Hero />
+        </div>
+      </div>
+      <div className={`bg-black ${styles.paddingX} ${styles.flexStart}`}>
+        <div className={`${styles.boxWidth}`}>
+          <AboutUs />
+        </div>
+      </div>
+    </div>
   );
 }
