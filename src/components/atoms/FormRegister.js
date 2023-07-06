@@ -1,5 +1,4 @@
 import React from "react";
-import googleLogo from "../../Assets/Img/google.png";
 import { Link } from "react-router-dom";
 
 export default function FormRegister() {
@@ -9,21 +8,8 @@ export default function FormRegister() {
         <div className="w-full max-w-md">
           <div className="flex flex-col justify-center items-center space-y-6">
             <h1 className="text-6xl font-bold">Create your account</h1>
-            <button
-              type="submit"
-              className=" relative flex w-full justify-center rounded-lg bg-white px-3 py-2 text-sm font-light text-[#444444]  transition duration-300  border-[0.1px] mb-4 border-gray-400 hover:scale-105"
-            >
-              <span className=" inset-y-0 left-0 flex items-center pl-3">
-                {/* <LockClosedIcon className="h-5 w-5 text-orange-500 group-hover:text-orange-400" aria-hidden="true" /> */}
-                <img className="h-5 w-5 mx-3" src={googleLogo} alt="google" />
-              </span>
-              Sign Up with Google
-            </button>
           </div>
-          <div>
-            <h3 className="m-3 font-semibold">OR</h3>
-          </div>
-          <form className="space-y-6">
+          <form className="space-y-6 my-8">
             <div className="rounded-md shadow-sm relative">
               <div>
                 <label className="text-md block text-left" htmlFor="user">
@@ -35,7 +21,7 @@ export default function FormRegister() {
                   required
                   autoComplete="off"
                   className="relative w-full rounded-md py-1 text-gray-500 border-[0.1px] border-gray-400 placeholder:text-gray-400 sm:text-sm sm:leading-6  pl-2"
-                  placeholder="Ej: Mampo"
+                  placeholder="Ej: Juan"
                 />
               </div>
               <div className="mt-4">
@@ -48,7 +34,7 @@ export default function FormRegister() {
                   required
                   autoComplete="off"
                   className="relative w-full rounded-md py-1 text-gray-500 border-[0.1px] border-gray-400 placeholder:text-gray-400 sm:text-sm sm:leading-6  pl-2"
-                  placeholder="Ej: vendeChispita2002@gmail.com"
+                  placeholder="Ej: example@gmail.com"
                 />
               </div>
               <div className="mt-4">
