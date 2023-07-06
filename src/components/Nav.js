@@ -46,7 +46,7 @@ export default function Nav() {
                   index === navLinks.length - 1 ? `mr-0` : `mb-4`
                 } `}
               >
-                <Link to={index === 1 ? "/login" : `#${nav.id}`}>
+                <Link to={nav.title === "Hermes" ? "/login" : `#${nav.id}`}>
                   {nav.title}
                 </Link>
               </li>
