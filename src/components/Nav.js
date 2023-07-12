@@ -1,29 +1,42 @@
 import { React, useState } from "react";
 import { navLinks } from "../Constants";
 import CodexWhite from "./../Assets/Img/codexWhite.png";
-import { Link } from "react-router-dom";
 import close from "./../Assets/Img/close.svg";
 import menu from "./../Assets/Img/menu.svg";
+import { Link as LinkScroll } from "react-scroll";
+import { Link } from "react-router-dom";
+import styles from "./../Styles";
 
 export default function Nav() {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <div className="w-full flex py-2 justify-between items-center navbar">
-      <img src={CodexWhite} alt="Codex-Logo" className="w-[75px] h-[45px]" />
+    <div className={`w-full flex py-2 justify-between items-center navbar `}>
+      <img src={CodexWhite} alt="Codex-Logo" className="w-[85px] h-[55px]" />
       <ul className="list-none sm:flex hidden justify-end items-center flex-1">
         {navLinks.map((nav, index) => (
           <li
             key={nav.id}
-            className={`hover:text-white hover:bg-[#1A9389] text-[#1A9389] transition-colors border-none border-0 px-4 py-2 rounded-md border-[#1A9389] font-bold cursor-pointer text-[18px] ${
+            className={`hover:text-[#00CAC8] duration-200 px-4 py-2 font-bold cursor-pointer text-[18px] ${
               index === navLinks.length - 1 ? `mr-0` : `mr-14`
             } `}
           >
-            <Link to={nav.title === "Hermes" ? "/login" : `#${nav.id}`}>
-              <span className="block w-full h-full relative">{nav.title}</span>
-            </Link>
+            <LinkScroll to={nav.id} smooth={true}>
+              <span className="block w-full h-full relative z-[2] ">
+                {nav.title}
+              </span>
+            </LinkScroll>
           </li>
         ))}
+        <li>
+          <Link
+            to={"Login"}
+            className={`hover:text-[#00CAC8] duration-200 px-4 py-2 font-bold cursor-pointer text-[18px] mx-14`}
+          >
+            {" "}
+            Hermes
+          </Link>
+        </li>
       </ul>
 
       <div className="sm:hidden flex flex-1 justify-end items-center">

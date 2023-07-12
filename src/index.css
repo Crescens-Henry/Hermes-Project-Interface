@@ -137,3 +137,16 @@
   background: rgba(255, 255, 255, 0.6);
   filter: blur(750px);
 }
+/* propeties scrollbar */
+body::-webkit-scrollbar {
+  width: 10px; /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: black; /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #00cac8; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+}
