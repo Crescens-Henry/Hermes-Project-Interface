@@ -5,7 +5,6 @@ import close from "./../Assets/Img/close.svg";
 import menu from "./../Assets/Img/menu.svg";
 import { Link as LinkScroll } from "react-scroll";
 import { Link } from "react-router-dom";
-import styles from "./../Styles";
 
 export default function Nav() {
   const [toggle, setToggle] = useState(false);
