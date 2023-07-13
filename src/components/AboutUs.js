@@ -8,7 +8,7 @@ const FeatureCard = ({ icon, nameSensor, content, index }) => {
   return (
     <motion.div
       id="Cards"
-      variants={fadeIn("left", 0.3)}
+      variants={fadeIn("left", 0.1)}
       initial="hidden"
       whileInView={"show"}
       className={`flex flex-row p-6 rounded-[20px] ${
