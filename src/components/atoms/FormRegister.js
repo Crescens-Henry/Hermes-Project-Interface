@@ -30,7 +30,7 @@ export default function FormRegister() {
                 </label>
                 <input
                   id="email"
-                  type="text"
+                  type="email"
                   required
                   autoComplete="off"
                   className="relative w-full rounded-md py-1 text-gray-500 border-[0.1px] border-gray-400 placeholder:text-gray-400 sm:text-sm sm:leading-6  pl-2"
@@ -56,6 +56,7 @@ export default function FormRegister() {
                 <div className="flex items-center mb-4">
                   <input
                     id="checkbox"
+                    required
                     className="border-[#B7B7B7] mr-2"
                     type="checkbox"
                   />

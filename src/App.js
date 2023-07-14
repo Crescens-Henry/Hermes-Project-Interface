@@ -7,7 +7,7 @@ export default function App() {
   return (
     <>
       <BrowserRouter>
-        <div className="bg-black text-white w-full h-screen overflow-hidden">
+        <div className="bg-primary text-white w-full h-screen">
           {/* <Navbar /> */}
           <Routes>
             <Route path="/" element={<Layout />} />
