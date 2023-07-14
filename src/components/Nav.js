@@ -10,7 +10,7 @@ export default function Nav() {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <div className={`w-full flex py-2 justify-between items-center navbar `}>
+    <div className={`w-full flex py-2 justify-between  items-center navbar`}>
       <img src={CodexWhite} alt="Codex-Logo" className="w-[85px] h-[55px]" />
       <ul className="list-none sm:flex hidden justify-end items-center flex-1">
         {navLinks.map((nav, index) => (
