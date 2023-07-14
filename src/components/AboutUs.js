@@ -21,10 +21,10 @@ const FeatureCard = ({ icon, nameSensor, content, index }) => {
         <img src={icon} alt="icon" className="w-[50%] h-[50%] object-contain" />
       </div>
       <div className="flex-1 flex flex-col ml-3">
-        <h4 className="font-poppins font-semibold text-white text-[18px] leading-[23px] mb-1">
+        <h4 className="font-semibold text-white text-[18px] leading-[23px] mb-1">
           {nameSensor}
         </h4>
-        <p className="font-poppins font-normal text-dimWhite text-[16px] leading-[24px] mb-1">
+        <p className="font-normal text-dimWhite text-[16px] leading-[24px] mb-1">
           {content}
         </p>
       </div>

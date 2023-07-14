@@ -4,9 +4,9 @@ import styles from "./../Styles";
 
 export default function Layout() {
   return (
-    <div className={`bg-primary w-full overflow-hidden `}>
+    <div className={`bg-primary overflow-hidden `}>
       <div
-        className={`${styles.paddingX} ${styles.flexCenter} sticky top-0 z-50`}
+        className={`${styles.paddingX} ${styles.flexCenter} fixed w-full z-10`}
       >
         <div className={`${styles.boxWidth}`}>
           <Nav />
