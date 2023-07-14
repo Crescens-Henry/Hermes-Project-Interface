@@ -31,7 +31,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <h1 className="font-pppins font-semibold ss:text-[68px] text-[52px] ss:leading-[100px] leading-[75px] w-full">
+        <h1 className="font-pppins font-semibold ss:text-[68px] text-[52px] ss:leading-[100px] leading-[75px]">
           of robotic support
         </h1>
         <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
