@@ -1,7 +1,31 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 export default function FormLogin() {
+  const navigate = useNavigate();
+  const [username, setUserName] = useState("");
+  const [password, setPassword] = useState("");
+
+  const loginHandler = (event) => {
+    const user = {
+      username,
+      password,
+    };
+    event.preventDefault();
+
+    axios
+      .post("http://localhost:5000/login", user)
+      .then((response) => {
+        // Procesar la respuesta exitosa si es necesario
+        console.log(response.data);
+        navigate("/Hermes");
+      })
+      .catch((error) => {
+        // Procesar el error si es necesario
+        console.log(error);
+      });
+  };
   return (
     <>
       <div className="flex min-h-full justify-center px-4 items-center sm:px-6 lg:px-8 bg-[#FCFCFC] ">
@@ -20,6 +44,8 @@ export default function FormLogin() {
                   id="user"
                   type="text"
                   required
+                  value={username}
+                  onChange={(e) => setUserName(e.target.value)}
                   autoComplete="off"
                   className="relative w-full rounded-md py-1 text-gray-500 border-[0.1px] border-gray-400 placeholder:text-gray-400 sm:text-sm sm:leading-6  pl-2"
                   placeholder="Ej: Juan"
@@ -34,6 +60,9 @@ export default function FormLogin() {
                   type="password"
                   autoComplete="off"
                   required
+                  value={password}
+                  maxLength={20}
+                  onChange={(e) => setPassword(e.target.value)}
                   className="relative block w-full rounded-md py-1 text-gray-500 border-[0.1px] border-gray-400 placeholder:text-gray-400  sm:text-sm sm:leading-6  pl-2"
                   placeholder="●●●●●●●●"
                 />
@@ -63,6 +92,7 @@ export default function FormLogin() {
               <button
                 type="submit"
                 className="group relative flex w-full justify-center rounded-md bg-black px-3 py-2 text-sm font-light text-white hover:bg-[#00CAC8] transition duration-300  mb-4 hover:scale-105"
+                onClick={loginHandler}
               >
                 Ingresar
               </button>
