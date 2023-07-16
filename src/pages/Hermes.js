@@ -1,9 +1,9 @@
 import React from "react";
-import { MyResponsiveLine } from "./atoms/graphics/Line";
-import { TemperatureChart } from "./atoms/graphics/Bar";
+import { MyResponsiveLine } from "../components/atoms/graphics/Line";
+import { TemperatureChart } from "../components/atoms/graphics/Bar";
 import { Link } from "react-router-dom";
 import Logo from "./../Assets/Img/codexWhite.png";
-import Sensors from "./atoms/Sensors";
+import Sensors from "../components/atoms/Sensors";
 
 export default function Hermes() {
   return (

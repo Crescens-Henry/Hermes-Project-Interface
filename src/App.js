@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./pages/LogIn";
 import Register from "./pages/Register";
 import Layout from "./pages/Layout";
-import Hermes from "./components/Hermes";
+import Hermes from "./pages/Hermes";
 export default function App() {
   return (
     <>
