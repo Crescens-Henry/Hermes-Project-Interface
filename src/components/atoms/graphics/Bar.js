@@ -1,50 +1,48 @@
 import React, { useState, useEffect } from "react";
 import { ResponsiveBar } from "@nivo/bar";
 
-export const TemperatureChart = () => {
+export const MyResponsiveBar = () => {
   const [data, setData] = useState([]);
 
-  // Función para generar valores aleatorios de temperatura
-  const generateRandomTemperatureData = () => {
-    const newData = [
-      {
-        date: "2023-07-01",
-        Temperatura: Math.floor(Math.random() * 100),
-      },
-      {
-        date: "2023-07-02",
-        Temperatura: Math.floor(Math.random() * 100),
-      },
-      {
-        date: "2023-07-03",
-        Temperatura: Math.floor(Math.random() * 100),
-      },
-      {
-        date: "2023-07-04",
-        Temperatura: Math.floor(Math.random() * 100),
-      },
-      {
-        date: "2023-07-05",
-        Temperatura: Math.floor(Math.random() * 100),
-      },
-      {
-        date: "2023-07-06",
-        Temperatura: Math.floor(Math.random() * 100),
-      },
-      {
-        date: "2023-07-07",
-        Temperatura: Math.floor(Math.random() * 100),
-      },
-    ];
+  const handleWebSocketMessage = (event) => {
+    try {
+      const messageJSON = event.data;
+      const messageObject = JSON.parse(messageJSON);
+      console.log("Mensaje recibido:", messageObject);
 
-    setData(newData);
+      setData((prevData) => {
+        const newData = [
+          {
+            date: new Date().toLocaleTimeString().slice(0, 8), // Formatear la fecha y mostrar solo HH:MM:SS
+            Temperature: messageObject.Temperature,
+          },
+        ];
+        return [...prevData, ...newData];
+      });
+    } catch (error) {
+      console.error("Error al analizar el mensaje JSON:", error);
+    }
   };
 
   useEffect(() => {
-    // Actualiza los datos cada 2 segundos
+    const socket = new WebSocket("ws://192.168.0.15:5000"); // Reemplaza con la URL de tu servidor WebSocket
+
+    socket.onmessage = handleWebSocketMessage;
+
+    return () => {
+      socket.close();
+    };
+  }, []);
+
+  useEffect(() => {
     const interval = setInterval(() => {
-      generateRandomTemperatureData();
-    }, 2000);
+      setData((prevData) => {
+        if (prevData.length >= 5) {
+          return prevData.slice(1); // Limitar la longitud de los datos a 12 para evitar superposiciones
+        }
+        return prevData;
+      });
+    }, 5000);
 
     return () => {
       clearInterval(interval);
@@ -54,7 +52,7 @@ export const TemperatureChart = () => {
   return (
     <ResponsiveBar
       data={data}
-      keys={["Temperatura"]}
+      keys={["Temperature"]}
       indexBy="date"
       margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
       padding={0.3}
@@ -68,7 +66,7 @@ export const TemperatureChart = () => {
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
-        legend: "Fecha",
+        legend: "Time",
         legendPosition: "middle",
         legendOffset: 32,
       }}
@@ -76,7 +74,7 @@ export const TemperatureChart = () => {
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
-        legend: "Temperatura",
+        legend: "Temperature",
         legendPosition: "middle",
         legendOffset: -40,
       }}

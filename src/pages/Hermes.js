@@ -1,9 +1,9 @@
 import React from "react";
 import { MyResponsiveLine } from "../components/atoms/graphics/Line";
-import { TemperatureChart } from "../components/atoms/graphics/Bar";
 import { Link } from "react-router-dom";
 import Logo from "./../Assets/Img/codexWhite.png";
 import Sensors from "../components/atoms/Sensors";
+import { MyResponsiveBar } from "../components/atoms/graphics/Bar";
 
 export default function Hermes() {
   return (
@@ -24,7 +24,7 @@ export default function Hermes() {
         {/* Sección derecha */}
         <div className="w-1/2 flex flex-col justify-center items-center text-black overflow-hidden">
           <div className="flex bg-white my-2 w-4/5 h-1/2 rounded-md">
-            <TemperatureChart />
+            <MyResponsiveBar />
           </div>
           <div className="flex bg-white my-2 w-4/5 h-1/2 rounded-md">
             <MyResponsiveLine />
