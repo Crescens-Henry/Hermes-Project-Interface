@@ -10,12 +10,12 @@
     {
       "src": "codex.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "139x90"
     },
     {
       "src": "codex.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "139x90"
     }
   ],
   "start_url": ".",

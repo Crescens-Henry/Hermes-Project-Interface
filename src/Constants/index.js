@@ -39,14 +39,14 @@ export const features = [
       "Muchos nos referimos a él como “da Vinci” y la realidad es que el artista no tenía apellido. “da Vinci” no es más que una referencia del lugar donde nació.",
   },
   {
-    id: "sensor2",
+    id: "sensor3",
     icon: pressure,
     nameSensor: "namess sensor",
     content:
       "Muchos nos referimos a él como “da Vinci” y la realidad es que el artista no tenía apellido. “da Vinci” no es más que una referencia del lugar donde nació.",
   },
   {
-    id: "sensor2",
+    id: "sensor4",
     icon: temperature,
     nameSensor: "namess sensor",
     content:
