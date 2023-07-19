@@ -18,7 +18,7 @@ export default function FormRegister() {
     event.preventDefault();
 
     axios
-      .post("http://localhost:5000/register", user)
+      .post("http://18.212.178.176:5000/register", user)
       .then((response) => {
         // Procesar la respuesta exitosa si es necesario
         console.log(response.data);

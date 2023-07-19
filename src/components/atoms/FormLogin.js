@@ -1,12 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 export default function FormLogin() {
+  useEffect(() => {
+    console.log(sessionStorage.getItem("token"));
+    if (sessionStorage.getItem("token") != null) {
+      console.log("ENTRE");
+      sessionStorage.removeItem("token");
+    }
+  }, []);
+
   const navigate = useNavigate();
+
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
-
+  const [error, setError] = useState("");
   const loginHandler = (event) => {
     const user = {
       username,
@@ -15,8 +24,9 @@ export default function FormLogin() {
     event.preventDefault();
 
     axios
-      .post("http://localhost:5000/login", user)
+      .post("http://18.212.178.176:5000/login", user)
       .then((response) => {
+        sessionStorage.setItem("token", response.data.token);
         // Procesar la respuesta exitosa si es necesario
         console.log(response.data);
         navigate("/Hermes");
@@ -24,6 +34,7 @@ export default function FormLogin() {
       .catch((error) => {
         // Procesar el error si es necesario
         console.log(error);
+        setError("Invalid username or password");
       });
   };
   return (
@@ -88,6 +99,14 @@ export default function FormLogin() {
                     Forgot Password?
                   </p>
                 </div>
+              </div>
+              <div>
+                {" "}
+                {error && (
+                  <p className="text-red-500 font-semibold text-xs mt-2">
+                    {error}
+                  </p>
+                )}
               </div>
               <button
                 type="submit"

@@ -3,7 +3,6 @@ import dioxido_de_carbono from "../Assets/Icons/dioxido-de-carbono 1.png";
 import humidity from "../Assets/Icons/image 6.png";
 import pressure from "../Assets/Icons/pressure-gauge 1.png";
 import temperature from "../Assets/Icons/termometro 1.png";
-import uv from "../Assets/Icons/ultravioleta 1.png";
 
 export const navLinks = [
   {

@@ -57,11 +57,7 @@ export default function Nav() {
                 className={`font-normal cursor-pointer text-[16px] ${
                   index === navLinks.length - 1 ? `mr-0` : `mb-4`
                 } `}
-              >
-                <Link to={nav.title === "Hermes" ? "/login" : `#${nav.id}`}>
-                  {nav.title}
-                </Link>
-              </li>
+              ></li>
             ))}
           </ul>
         </div>
